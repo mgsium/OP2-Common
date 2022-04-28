@@ -37,6 +37,8 @@
 ! It defines the interoperable data types between OP2 C and Fortran
 ! and it defines the Fortran interface for declaration routines
 
+#define UNUSED(x) if (.false.) print *, SHAPE(x)
+
 module OP2_Fortran_Declarations
 
   use, intrinsic :: ISO_C_BINDING
@@ -1238,14 +1240,9 @@ contains
     integer(kind=c_int), value :: constdim
     character(kind=c_char,len=*), optional :: opname
 
-    ! local dummies to prevent compiler warning
-    character, dimension(1) :: dat_dummy
-    integer(kind=c_int) :: constdim_dummy
-    character(kind=c_char) :: opname_dummy
-
-    dat_dummy = dat
-    constdim_dummy = constdim
-    opname_dummy = opname//C_NULL_CHAR
+    UNUSED(dat)
+    UNUSED(constdim)
+    UNUSED(opname)
 
   end subroutine op_decl_const_char
 
@@ -1255,14 +1252,9 @@ contains
     integer(kind=c_int), value :: constdim
     character(kind=c_char,len=*), optional :: opname
 
-    ! local dummies to prevent compiler warning
-    integer(4), dimension(1) :: dat_dummy
-    integer(kind=c_int) :: constdim_dummy
-    character(kind=c_char) :: opname_dummy
-
-    dat_dummy = dat
-    constdim_dummy = constdim
-    opname_dummy = opname//C_NULL_CHAR
+    UNUSED(dat)
+    UNUSED(constdim)
+    UNUSED(opname)
 
   end subroutine op_decl_const_integer_4
 
@@ -1272,14 +1264,9 @@ contains
     integer(kind=c_int), value :: constdim
     character(kind=c_char,len=*), optional :: opname
 
-    ! local dummies to prevent compiler warning
-    integer(4), dimension(1,1) :: dat_dummy
-    integer(kind=c_int) :: constdim_dummy
-    character(kind=c_char) :: opname_dummy
-
-    dat_dummy(1,1) = dat(1,1)
-    constdim_dummy = constdim
-    opname_dummy = opname//C_NULL_CHAR
+    UNUSED(dat)
+    UNUSED(constdim)
+    UNUSED(opname)
 
   end subroutine op_decl_const_integer_2_4
 
@@ -1289,14 +1276,9 @@ contains
     integer(kind=c_int), value :: constdim
     character(kind=c_char,len=*), optional :: opname
 
-    ! local dummies to prevent compiler warning
-    real(8), dimension(1,1) :: dat_dummy
-    integer(kind=c_int) :: constdim_dummy
-    character(kind=c_char) :: opname_dummy
-
-    dat_dummy(1,1) = dat(1,1)
-    constdim_dummy = constdim
-    opname_dummy = opname//C_NULL_CHAR
+    UNUSED(dat)
+    UNUSED(constdim)
+    UNUSED(opname)
 
   end subroutine op_decl_const_real_2_8
 
@@ -1306,14 +1288,9 @@ contains
     integer(kind=c_int), value :: constdim
     character(kind=c_char,len=*), optional :: opname
 
-    ! local dummies to prevent compiler warning
-    real(8), dimension(1) :: dat_dummy
-    integer(kind=c_int) :: constdim_dummy
-    character(kind=c_char) :: opname_dummy
-
-    dat_dummy = dat
-    constdim_dummy = constdim
-    opname_dummy = opname//C_NULL_CHAR
+    UNUSED(dat)
+    UNUSED(constdim)
+    UNUSED(opname)
 
   end subroutine op_decl_const_real_8
 
@@ -1323,14 +1300,9 @@ contains
     integer(kind=c_int), value :: constdim
     character(kind=c_char,len=*), optional :: opname
 
-    ! local dummies to prevent compiler warning
-    integer(4) :: dat_dummy
-    integer(kind=c_int) :: constdim_dummy
-    character(kind=c_char) :: opname_dummy
-
-    dat_dummy = dat
-    constdim_dummy = constdim
-    opname_dummy = opname//C_NULL_CHAR
+    UNUSED(dat)
+    UNUSED(constdim)
+    UNUSED(opname)
 
   end subroutine op_decl_const_scalar_integer_4
 
@@ -1340,14 +1312,9 @@ contains
     integer(kind=c_int), value :: constdim
     character(kind=c_char,len=*), optional :: opname
 
-    ! local dummies to prevent compiler warning
-    real(8) :: dat_dummy
-    integer(kind=c_int) :: constdim_dummy
-    character(kind=c_char) :: opname_dummy
-
-    dat_dummy = dat
-    constdim_dummy = constdim
-    opname_dummy = opname//C_NULL_CHAR
+    UNUSED(dat)
+    UNUSED(constdim)
+    UNUSED(opname)
 
   end subroutine op_decl_const_scalar_real_8
 
@@ -1357,14 +1324,9 @@ contains
     integer(kind=c_int), value :: constdim
     character(kind=c_char,len=*), optional :: opname
 
-    ! local dummies to prevent compiler warning
-    logical :: dat_dummy
-    integer(kind=c_int) :: constdim_dummy
-    character(kind=c_char) :: opname_dummy
-
-    dat_dummy = dat
-    constdim_dummy = constdim
-    opname_dummy = opname//C_NULL_CHAR
+    UNUSED(dat)
+    UNUSED(constdim)
+    UNUSED(opname)
 
   end subroutine op_decl_const_logical
 
@@ -1374,14 +1336,9 @@ contains
     integer(kind=c_int), value :: constdim
     character(kind=c_char,len=*), optional :: opname
 
-    ! string dummies to prevent compiler warning
-    character(kind=c_char,len=512) :: dat_dummy
-    integer(kind=c_int) :: constdim_dummy
-    character(kind=c_char) :: opname_dummy
-
-    dat_dummy = dat
-    constdim_dummy = constdim
-    opname_dummy = opname//C_NULL_CHAR
+    UNUSED(dat)
+    UNUSED(constdim)
+    UNUSED(opname)
 
   end subroutine op_decl_const_string
 
